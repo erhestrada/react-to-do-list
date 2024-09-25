@@ -1,11 +1,10 @@
 import React from 'react'
 import ToDoItem from './ToDoItem';
 
-export default function ToDoList() {
-    let toDoList = ["item1", "item2", "item3"];
+export default function ToDoList({toDoListStrings}) {
     return (
         <ul className="ToDoList">
-            {toDoList.map((element, index) => {
+            {toDoListStrings.map((element, index) => {
                 return(
                     <ToDoItem index={index} element={element} />
                 )
