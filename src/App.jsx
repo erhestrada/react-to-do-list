@@ -14,21 +14,23 @@ function App() {
     }
   }
 
-  function handleDeleteToDoItem(indexToDelete) {
+  function handleDeleteToDoItem(indexOfItemToDelete) {
     const updatedToDoListStrings = toDoListStrings.filter((element, index) => {
-      return index!==indexToDelete
+      return index!==indexOfItemToDelete
     });
     setToDoListStrings(updatedToDoListStrings);
   }
 
-  function handleEditToDoItem() {
-
+  function handleEditToDoItem(indexOfItemToEdit) {
+    const stringToEdit = toDoListStrings[indexOfItemToEdit];
+    setToDoString(stringToEdit);
+    handleDeleteToDoItem(indexOfItemToEdit);
   }
   
   return (
     <main>
       <ToDoInput handleAddToDoItem={handleAddToDoItem} toDoString={toDoString} setToDoString={setToDoString} />
-      <ToDoList toDoListStrings={toDoListStrings} handleDeleteToDoItem={handleDeleteToDoItem} />
+      <ToDoList toDoListStrings={toDoListStrings} handleDeleteToDoItem={handleDeleteToDoItem} handleEditToDoItem={handleEditToDoItem} />
     </main>
   )
 }
