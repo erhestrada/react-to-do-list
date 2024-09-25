@@ -13,10 +13,14 @@ export default function ToDoInput({handleAddToDoItem}) {
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             handleAddToDoItem(toDoString);
+            setToDoString('');
           }
         }}
         />
-        <button onClick={() => {handleAddToDoItem(toDoString)}}>Add</button>
+        <button onClick={() => {
+          handleAddToDoItem(toDoString);
+          setToDoString('');
+          }}>Add</button>
     </header>
   )
 }
