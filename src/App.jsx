@@ -12,11 +12,22 @@ function App() {
       setToDoListStrings(updatedToDoListStrings);
     }
   }
+
+  function handleDeleteToDoItem(indexToDelete) {
+    const updatedToDoListStrings = toDoListStrings.filter((element, index) => {
+      return index!==indexToDelete
+    });
+    setToDoListStrings(updatedToDoListStrings);
+  }
+
+  function handleEditToDoItem() {
+
+  }
   
   return (
     <main>
       <ToDoInput handleAddToDoItem={handleAddToDoItem} />
-      <ToDoList toDoListStrings={toDoListStrings} />
+      <ToDoList toDoListStrings={toDoListStrings} handleDeleteToDoItem={handleDeleteToDoItem} />
     </main>
   )
 }
