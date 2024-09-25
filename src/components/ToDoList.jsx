@@ -1,4 +1,5 @@
 import React from 'react'
+import ToDoItem from './ToDoItem';
 
 export default function ToDoList() {
     let toDoList = ["item1", "item2", "item3"];
@@ -6,9 +7,7 @@ export default function ToDoList() {
         <ul className="ToDoList">
             {toDoList.map((element, index) => {
                 return(
-                    <li className="toDoItem" key={index}>{element}
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    </li>
+                    <ToDoItem index={index} element={element} />
                 )
             })}
 
