@@ -6,7 +6,16 @@ export default function ToDoInput({handleAddToDoItem}) {
   
   return (
     <header>
-        <input value={toDoString} onChange={(e) => {setToDoString(e.target.value)}} placeholder = "enter todo"/>
+        <input
+        placeholder = "enter todo"
+        value={toDoString}
+        onChange={(e) => {setToDoString(e.target.value)}}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleAddToDoItem(toDoString);
+          }
+        }}
+        />
         <button onClick={() => {handleAddToDoItem(toDoString)}}>Add</button>
     </header>
   )

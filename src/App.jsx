@@ -3,7 +3,7 @@ import ToDoInput from "./components/ToDoInput"
 import ToDoList from "./components/ToDoList"
 
 function App() {
-  const [toDoListStrings, setToDoListStrings] = useState(["item1", "item2", "item3"]);
+  const [toDoListStrings, setToDoListStrings] = useState([]);
 
   // handler for when user types in new to-do and hits the add button
   function handleAddToDoItem(newToDoString) {
