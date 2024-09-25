@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
-export default function ToDoInput({handleAddToDoItem}) {
-
-  const [toDoString, setToDoString] = useState('');
+export default function ToDoInput({handleAddToDoItem, toDoString, setToDoString}) {
   
   return (
     <header>

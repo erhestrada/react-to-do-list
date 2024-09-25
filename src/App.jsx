@@ -4,6 +4,7 @@ import ToDoList from "./components/ToDoList"
 
 function App() {
   const [toDoListStrings, setToDoListStrings] = useState([]);
+  const [toDoString, setToDoString] = useState('');
 
   // handler for when user types in new to-do and hits the add button
   function handleAddToDoItem(newToDoString) {
@@ -26,7 +27,7 @@ function App() {
   
   return (
     <main>
-      <ToDoInput handleAddToDoItem={handleAddToDoItem} />
+      <ToDoInput handleAddToDoItem={handleAddToDoItem} toDoString={toDoString} setToDoString={setToDoString} />
       <ToDoList toDoListStrings={toDoListStrings} handleDeleteToDoItem={handleDeleteToDoItem} />
     </main>
   )
