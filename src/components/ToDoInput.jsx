@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function ToDoInput() {
   return (
-    <div>ToDoInput</div>
+    <header>
+        <input placeholder = "enter todo"/>
+        <button>Add</button>
+    </header>
   )
 }
